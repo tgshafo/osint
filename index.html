@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Осинтан - Заметки с перекрестными ссылками</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <h1>Осинтан</h1>
+            </div>
+            
+            <div class="nav-section">
+                <a href="#" class="nav-item active" data-page="home">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="#" class="nav-item" data-page="new-note">
+                    <i class="fas fa-plus-circle"></i> Новая заметка
+                </a>
+                <a href="#" class="nav-item" data-page="graph">
+                    <i class="fas fa-project-diagram"></i> Граф
+                </a>
+                <a href="#" class="nav-item" data-page="search">
+                    <i class="fas fa-search"></i> Поиск
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Теги</h3>
+                <div id="tags-list" class="tags-container"></div>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Последние заметки</h3>
+                <div id="recent-notes" class="notes-list"></div>
+            </div>
+            
+            <div class="nav-section">
+                <button id="export-btn" class="btn">
+                    <i class="fas fa-download"></i> Экспорт
+                </button>
+                <button id="import-btn" class="btn">
+                    <i class="fas fa-upload"></i> Импорт
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <div class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="global-search" placeholder="Поиск по заметкам...">
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <!-- Динамическое содержимое будет загружаться здесь -->
+                <div id="page-content">
+                    <div class="welcome-section">
+                        <h2>Добро пожаловать в Осинтан!</h2>
+                        <p>Система для заметок с перекрестными ссылками в стиле Obsidian.</p>
+                        
+                        <div class="features">
+                            <div class="feature-card">
+                                <i class="fas fa-link"></i>
+                                <h3>Связанные заметки</h3>
+                                <p>Используйте [[двойные скобки]] для создания ссылок между заметками</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-tags"></i>
+                                <h3>Теги</h3>
+                                <p>Организуйте заметки с помощью тегов</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-project-diagram"></i>
+                                <h3>Визуализация графа</h3>
+                                <p>Смотрите связи между вашими заметками</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-search"></i>
+                                <h3>Поиск</h3>
+                                <p>Быстро находите нужную информацию</p>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-stats">
+                            <div class="stat">
+                                <span id="total-notes">0</span>
+                                <small>Всего заметок</small>
+                            </div>
+                            <div class="stat">
+                                <span id="total-tags">0</span>
+                                <small>Тегов</small>
+                            </div>
+                            <div class="stat">
+                                <span id="total-links">0</span>
+                                <small>Связей</small>
+                            </div>
+                        </div>
+                        
+                        <button id="create-first-note" class="btn primary">
+                            <i class="fas fa-plus"></i> Создать первую заметку
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
