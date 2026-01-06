@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Осинтан - Заметки с перекрестными ссылками</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <h1>Осинтан</h1>
+            </div>
+            
+            <div class="nav-section">
+                <a href="#" class="nav-item active" data-page="home">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="#" class="nav-item" data-page="new-note">
+                    <i class="fas fa-plus-circle"></i> Новая заметка
+                </a>
+                <a href="#" class="nav-item" data-page="graph">
+                    <i class="fas fa-project-diagram"></i> Граф
+                </a>
+                <a href="#" class="nav-item" data-page="search">
+                    <i class="fas fa-search"></i> Поиск
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Теги</h3>
+                <div id="tags-list" class="tags-container"></div>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Последние заметки</h3>
+                <div id="recent-notes" class="notes-list"></div>
+            </div>
+            
+            <div class="nav-section">
+                <button id="export-btn" class="btn">
+                    <i class="fas fa-download"></i> Экспорт
+                </button>
+                <button id="import-btn" class="btn">
+                    <i class="fas fa-upload"></i> Импорт
+                </button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <div class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="global-search" placeholder="Поиск по заметкам...">
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <div id="page-content">
+                    <!-- Контент загружается динамически -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно для изображений -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div class="image-info" id="image-info"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
